@@ -15,15 +15,16 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        calendarView=findViewById(R.id.calendarView);
+        calendarView = findViewById(R.id.calendarView);
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String data= year + "/" + month + "/" + dayOfMonth;
+                String data = year + "/" + month + "/" + dayOfMonth;
 
-                Intent intent = new Intent(MainActivity2.this,MainActivity.class);
-                intent.putExtra("data",data);
-                startActivity(intent);
+                Intent intent = new Intent();
+                intent.putExtra("data", data);
+                setResult(RESULT_OK, intent);
+                finish();
             }
         });
 

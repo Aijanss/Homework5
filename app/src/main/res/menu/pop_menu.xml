@@ -6,4 +6,10 @@
         android:id="@+id/delete"
         app:showAsAction="never"/>
 
+    <item
+        android:title="Change date"
+        android:id="@+id/data"
+        app:showAsAction="never"/>
+
+
 </menu>
